@@ -1,6 +1,8 @@
 package main;
 
 import java.io.FileWriter;
+import java.util.LinkedList;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -26,7 +28,11 @@ public class Main3 {
 		m3.setTitle("Before midnight");
 		m3.setReleaseYeas(2013);
 		
-		Movie[] movies= {m1,m2,m3};
+		//Movie[] movies= {m1,m2,m3};
+		List<Movie> movies=new LinkedList<Movie>();
+		movies.add(m1);
+		movies.add(m3);
+		movies.add(m2);
 		
 		Gson gson=new GsonBuilder().setPrettyPrinting().create();
 		
