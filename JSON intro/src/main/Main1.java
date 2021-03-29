@@ -17,8 +17,11 @@ public class Main1 {
 		m.setReleaseYeas(1996);
 		m.setRating(7.2);
 		
+		String[] actors= {"George Clooney", "Quentin Tarantino"};
+		m.setActors(actors);
+		
 		try(FileWriter file=new FileWriter("movie.json")){
-		Gson gson=new GsonBuilder().setPrettyPrinting().create();
+		Gson gson=new GsonBuilder().setPrettyPrinting().serializeNulls().create();
 		gson.toJson(m,file);
 		}catch(Exception e) {
 			e.printStackTrace();

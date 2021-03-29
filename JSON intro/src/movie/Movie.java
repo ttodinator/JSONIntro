@@ -1,5 +1,7 @@
 package movie;
 
+import java.util.Arrays;
+
 import com.google.gson.annotations.SerializedName;
 
 public class Movie {
@@ -14,6 +16,16 @@ public class Movie {
 	
 	private transient double rating;
 	
+	private String[] actors;
+	
+	public String[] getActors() {
+		return actors;
+	}
+
+	public void setActors(String[] actors) {
+		this.actors = actors;
+	}
+
 	public String getImdbId() {
 		return imdbId;
 	}
@@ -49,8 +61,10 @@ public class Movie {
 	@Override
 	public String toString() {
 		return "Movie [imdbId=" + imdbId + ", title=" + title + ", releaseYeas=" + releaseYeas + ", rating=" + rating
-				+ "]";
+				+ ", actors=" + Arrays.toString(actors) + "]";
 	}
+
+
 	
 	
 	
